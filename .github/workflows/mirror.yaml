@@ -1,13 +1,11 @@
 # .github/workflows/mirror.yml
 name: 'mirror'
 on:
-#  push:
-#    branches:
-#      - __mirror
+  push:
+    branches:
+      - __mirror
   schedule:
-    # - cron: '42 3 * * *' ## 03:42
     - cron: '13 * * * *'
-  # workflow_dispatch:
 
 jobs:
   mirror:
