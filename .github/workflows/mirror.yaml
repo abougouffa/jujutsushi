@@ -1,0 +1,22 @@
+# .github/workflows/mirror.yml
+name: 'mirror'
+on:
+#  push:
+#    branches:
+#      - __mirror
+  schedule:
+    # - cron: '42 3 * * *' ## 03:42
+    - cron: '13 * * * *'
+  # workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    name: mirror
+    steps:
+      - name: Mirror
+        id: mirror
+        uses: bridgelightcloud/github-mirror-action@v3
+        with:
+          origin: 'https://git.sr.ht/~puercopop/jujutsushi'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
