@@ -39,14 +39,14 @@
 (defun jj-dashboard ()
   "Opens and refreshes the project's jj dashboard.
 
-The dashboard shows the combined output of jj status, jj log and jj branch list."
+The dashboard shows the combined output of jj status, jj log and jj bookmark list."
   (interactive)
   (with-current-buffer (get-buffer-create jj--dashboard-buffer)
     (erase-buffer)
     (insert "jj status\n")
     (insert (shell-command-to-string "jj status"))
-    (insert "\n\njj branch list\n")
-    (insert (shell-command-to-string "jj branch list"))
+    (insert "\n\njj bookmark list\n")
+    (insert (shell-command-to-string "jj bookmark list"))
     (insert "\n\njj log\n")
     (insert (shell-command-to-string "jj log"))
     (goto-char (point-min))
