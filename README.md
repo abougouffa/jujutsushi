@@ -11,5 +11,6 @@ Therefore, if you are using this repo as an alternative to the default one, plea
 
 ```elisp
 (use-package jujutsushi
+  ;; Make sure you specify the "default" branch
   :straight (:host github :repo "abougouffa/jujutsushi" :branch "default"))
 ```
